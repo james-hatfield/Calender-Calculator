@@ -6,6 +6,10 @@ import javafx.beans.property.SimpleStringProperty;
 
 import java.time.LocalDate;
 
+
+//This class is used for storing break objects. Designed to hold
+//two dates, the beginning date and the ending date. The calculator
+//will exclude all dates including and inbetween the start and end date.
 public class Break {
     private SimpleStringProperty name = new SimpleStringProperty();
     private ObjectProperty<LocalDate> breakStart;
