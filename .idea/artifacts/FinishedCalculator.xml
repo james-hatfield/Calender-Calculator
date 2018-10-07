@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="FinishedCalculator">
+    <output-path>$PROJECT_DIR$/out/artifacts/FinishedCalculator</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="FinishedCalculator.jar">
+        <element id="module-output" name="FinishedCalculator" />
+      </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/lib/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/lib/commons-collections4-4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/ooxml-lib/curvesapi-1.04.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/lib/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/lib/log4j-1.2.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/ooxml-lib/xmlbeans-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-examples-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-excelant-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-ooxml-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-ooxml-schemas-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../poi-3.17/poi-scratchpad-3.17.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/schoolBreaks.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/schoolHolidays.txt" />
+    </root>
+  </artifact>
+</component>

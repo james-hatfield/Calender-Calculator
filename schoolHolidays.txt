@@ -1,0 +1,35 @@
+Martin Luther King Day	01-16-2017
+Lincoln Day	02-13-2017
+President's Day	02-20-2017
+Good Friday	03-31-2017
+Memorial Day	05-29-2017
+Independence Day	07-04-2017
+Labor Day	09-04-2017
+Veterens Day	11-10-2017
+Thanksgiving Day	11-23-2017
+Thanksgiving	11-24-2017
+Christmas Day 1	12-22-2017
+Christmas Day 2	12-25-2017
+Christmas Day 3	12-26-2017
+Christmas Day 4	12-29-2017
+New Years Eve	01-01-2018
+Martin Luther Kind Day	01-15-2018
+Lincoln Day	02-12-2018
+President's Day	02-19-2018
+Good Friday	03-30-2018
+Memorial Day	05-28-2018
+Independence Day	07-04-2018
+Labor Day	09-03-2018
+Veterans Day	11-12-2018
+Thanksgiving	11-22-2018
+Thanksgiving Day	11-23-2018
+Christmas 1	12-24-2018
+Christmas 2	12-25-2018
+Christmas 3	12-26-2018
+Christmas	12-31-2018
+New Years Eve	01-01-2019
+Martin Luther King Day	01-21-2019
+Lincoln Day	02-11-2019
+President's Day	02-18-2019
+Good Friday	03-22-2019
+Memorial Day	05-27-2019

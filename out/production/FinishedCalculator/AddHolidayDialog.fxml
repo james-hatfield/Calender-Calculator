@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.AddHolidayDialog"
+            prefHeight="200.0" prefWidth="400.0">
+    <headerText>
+        Add a new holiday.
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Holiday Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="holidayName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Select the date" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DatePicker GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="date"/>
+        </GridPane>
+    </content>
+
+</DialogPane>
