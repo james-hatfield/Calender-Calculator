@@ -23,6 +23,8 @@ public class Main extends Application {
         launch(args);
     }
 
+    //Calls the init function making sure that the files are there so that the controller
+    //can uses the files to load the tables.
     @Override
     public void init() throws Exception {
         try{
@@ -38,6 +40,7 @@ public class Main extends Application {
         }
     }
 
+    //ensures that the files are properly stored when they are edited or deleted from.
     @Override
     public void stop() throws Exception {
         try{
