@@ -20,7 +20,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-
+//This is the main Application where all of the classes are brought together and
+//utilized.
 public class Controller {
     @FXML
     private BorderPane mainGridPane;
@@ -54,6 +55,11 @@ public class Controller {
     private XSSFRow row;
     private boolean fileClosed = false;
 
+    //The instance holds all of the holidays or breaks respective to their classes.
+    //Once the initialize method is called, the holiday table view and break table view
+    //are loaded with the dates that are inside their respective .txt files. The setCellFactory
+    //is set to updateItem function and allows the table to instantly display whatever items
+    //have been added or deleted without reloading the entire program
     public void initialize() throws IOException {
         holidayTableView.setItems(HolidayData.getInstance().getHolidays());
 
@@ -94,7 +100,11 @@ public class Controller {
             }
         });
     }
-
+    
+    //This is the main calculator where everything comes together. The calculator takes in the current totalDaysPaid
+    //variable which is stored in the jobs set and loaded into a listView for the user to see. Once picked, the start and end
+    //dates for the respective type of employee are found and ran against the actual start and end dates of the employee that 
+    //the user input. It counts to 40, 80, and 130 showing the appropriate assessment dates for that particular employee.
     @FXML
     public void handleCalculateButtonClick() {
         if ((fileClosed) && (datePickerDate.getValue() != null)) {
@@ -157,6 +167,7 @@ public class Controller {
         }
     }
 
+    //Opens up the file chooser so the user can select a an excel file for the parser.
     @FXML
     public void handleFileButtonClick() throws Exception {
         FileChooser fileChooser = new FileChooser();
@@ -174,7 +185,7 @@ public class Controller {
         }
 
     }
-
+    //Brings up a new form for the user to fill out and add a holiday to their list of exceptions
     public void showAddHolidayDialog() throws IOException {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(mainGridPane.getScene().getWindow());
@@ -199,7 +210,7 @@ public class Controller {
         }
 
     }
-
+    //Deletes a holiday from the txt file and from the table view
     public void deleteHoliday() {
         Holiday holiday = holidayTableView.getSelectionModel().getSelectedItem();
         if (holiday == null) {
@@ -228,7 +239,7 @@ public class Controller {
             }
         }
     }
-
+    //Edits a holiday object
     public void editHoliday() {
         Holiday selectedHoliday = holidayTableView.getSelectionModel().getSelectedItem();
         if (selectedHoliday == null) {
@@ -268,6 +279,7 @@ public class Controller {
         }
     }
 
+    //Calls the AddBreakDialog so the user can fill out the form and create a new break.
     @FXML
     public void showAddBreaksDialog() {
         Dialog<ButtonType> dialog = new Dialog<>();
@@ -296,7 +308,8 @@ public class Controller {
             }
         }
     }
-
+    
+    //Allows the user to delete a break 
     @FXML
     public void deleteBreak() {
         Break newBreak = breakTableView.getSelectionModel().getSelectedItem();
@@ -325,7 +338,8 @@ public class Controller {
             }
         }
     }
-
+    
+    //This function allows the user to edit a break by selecting the break and clicking the edit button
     @FXML
     public void editBreak() {
         Break selectedBreak = breakTableView.getSelectionModel().getSelectedItem();
@@ -366,6 +380,11 @@ public class Controller {
         }
     }
 
+    //This is the excel parser. This part of the application runs once the user has selected the 
+    //appropriate excel file to be load. It goes through the entire spreadsheet and stores the start and end
+    //dates of the current year and next year, as well as the total days paid for the employees. There is a 
+    //lot of duplicate information in the spreadsheet, so I store it all in a set and overrode the compartator in
+    //the Job class to compare totalDaysPaid as those were the unique attributes
     private void open(File file) throws Exception {
         XSSFWorkbook workbook = new XSSFWorkbook(file);
         XSSFSheet spreadSheet = workbook.getSheetAt(0);
@@ -431,7 +450,10 @@ public class Controller {
                 }
             }
             if (job.getStartDate() != null) {
-                jobs.add(job);
+                jobs.add(job); //This is a linkHashSet as defined at the beginning of the Controller Class.
+                               //I chose to store the items in this data structure due to the fact that the excel spreadsheet is
+                               //already in order so I wouldn't have to sort it late and the set would prevent any duplicates that
+                               //I didn't need
             }
         }
         workbook.close(); //closes the workbook
@@ -447,6 +469,7 @@ public class Controller {
         listViewNumbers.setItems(paidDays);
     }
 
+    //Displays error message if the file can't be loaded
     private void errorLoadingFile(FXMLLoader loader){
         Alert warning = new Alert(Alert.AlertType.INFORMATION);
         warning.setTitle("Error Loading File");
@@ -454,7 +477,7 @@ public class Controller {
         warning.setContentText("The file" + loader.getLocation().getFile() + " was not loader properly.");
         warning.showAndWait();
     }
-
+    //Displays error message if the file can't be stored.
     private void errorStoringFile(){
         Alert warning = new Alert(Alert.AlertType.INFORMATION);
         warning.setTitle("Error Storing File");
