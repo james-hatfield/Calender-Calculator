@@ -3,6 +3,11 @@ package sample;
 import java.time.LocalDate;
 import java.util.Objects;
 
+//This class is used for the parser to store the dates and totalDaysPaid into
+//for calculation later. The equals comparator is overridden to only compare totalDaysPaid
+//because all employees who have the same totalDaysPaid have the same start and end dates. This means
+//that there is a lot of duplicate information, so I compared each job that was being parsed with a job that
+//was already stored in the set and if they were different, it was able to be stored into the set.
 public class Job {
     private LocalDate startDate;
     private LocalDate endDate;
