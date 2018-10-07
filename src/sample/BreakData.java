@@ -17,7 +17,9 @@ public class BreakData {
     private static BreakData instance = new BreakData();
     private static String fileName = "schoolBreaks.txt"; //File where school breaks is currently stored
     private DateTimeFormatter formatter;
-
+    
+    //I used the observableList because it allows for items to be added or deleted from in real time without
+    //The program needing to be restarted.
     private ObservableList<Break> breaks;
 
     public BreakData(){
