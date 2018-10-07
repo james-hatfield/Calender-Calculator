@@ -12,6 +12,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 
+//Much like the BreakData class, this class is responsible for handling all of the holiday object and
+//storing them into an instance that the program can use to load them into a table for the user to see
 public class HolidayData {
     private static HolidayData instance = new HolidayData();
     private static String fileName = "schoolHolidays.txt";
