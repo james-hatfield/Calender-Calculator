@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 
+//Much like the AddBreakDialog, this brings up a form for the user to 
+//add Holiday dates to, to be stored to the file and Table View.
 public class AddHolidayDialog {
 
     @FXML
