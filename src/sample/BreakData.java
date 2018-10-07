@@ -15,12 +15,13 @@ import java.util.Iterator;
 
 public class BreakData {
     private static BreakData instance = new BreakData();
-    private static String fileName = "schoolBreaks.txt";
+    private static String fileName = "schoolBreaks.txt"; //File where school breaks is currently stored
     private DateTimeFormatter formatter;
 
     private ObservableList<Break> breaks;
 
     public BreakData(){
+        //initializes formatter so it displayes the dates properly
         formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
     }
 
@@ -36,7 +37,9 @@ public class BreakData {
         breaks.add(newBreak);
     }
 
-
+    //This function loads the breaks from the .txt file, breaks them into pieces using the 
+    //split string method and stores them in their appropriate cells on the break table in
+    //the gui
     public void loadBreaks() throws IOException {
         breaks = FXCollections.observableArrayList();
         Path path = Paths.get(fileName);
@@ -65,6 +68,8 @@ public class BreakData {
         }
     }
 
+    //Stores the breaks in the .txt file by iterating through the breaks and storing
+    //them piece by piece into the .txt file.
     public void storeBreaks()throws IOException{
         Path path = Paths.get(fileName);
         BufferedWriter bw = Files.newBufferedWriter(path);
@@ -88,6 +93,8 @@ public class BreakData {
         breaks.remove(oldBreak);
     }
 
+    //Function used in the main program to determine if what the calculator is going over is a date
+    //if it is a break it returns true and the calculator skips that date, otherwise it counts it.
     public boolean isBreak(LocalDate date){
         for(Break b : breaks){
             if((date.compareTo(b.getBreakStart()) >=0) && (date.compareTo(b.getBreakEnd()) <=0)){
