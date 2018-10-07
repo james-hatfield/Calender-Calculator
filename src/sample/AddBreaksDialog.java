@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.time.LocalDate;
 
+//When the AddBreaksDialog is brought up, all of the information is stored into these fields,
+//loaded into the text files and presented to the user through the tableview.
 public class AddBreaksDialog {
     @FXML
     private TextField breakName;
